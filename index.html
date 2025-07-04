@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Holy Quran - Nazra, Hifz & Duas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c5e80;
+            --secondary: #4a9bd1;
+            --accent: #25D366;
+            --light: #f5f9fc;
+            --dark: #1a2e40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .header-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.8s ease-out;
+            animation-fill-mode: backwards;
+        }
+        
+        .course-card:nth-child(1) { animation-delay: 0.2s; }
+        .course-card:nth-child(2) { animation-delay: 0.4s; }
+        .course-card:nth-child(3) { animation-delay: 0.6s; }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-icon {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 2.5rem;
+            padding: 25px 0;
+            text-align: center;
+        }
+        
+        .course-content {
+            padding: 25px;
+        }
+        
+        .course-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .course-desc {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .contact-section {
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            font-size: 1.1rem;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            margin: 10px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .courses-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header-title">📖 Learn the Holy Quran with Us</h1>
+            <p class="header-subtitle">Join our Quran classes and enrich your life with the divine words of Allah (SWT)</p>
+        </header>
+        
+        <div class="courses-container">
+            <div class="course-card">
+                <div class="course-icon">
+                    <i class="fas fa-book-quran"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Nazra (Quran Recitation)</h3>
+                    <p class="course-desc">Learn to read the Quran correctly with proper Tajweed rules from qualified teachers.</p>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Hifz (Memorization)</h3>
+                    <p class="course-desc">Structured program to help you memorize the Quran and become Hafiz/Hafiza.</p>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">
+                    <i class="fas fa-hands-praying"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Masnoon Duaain</h3>
+                    <p class="course-desc">Learn essential daily supplications from the Sunnah for all aspects of life.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <a href="https://wa.me/923199929035" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Message Us on WhatsApp
+            </a>
+          
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
