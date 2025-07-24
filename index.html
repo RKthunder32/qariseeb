@@ -25,6 +25,12 @@
             background-color: var(--secondary);
             color: var(--text);
             line-height: 1.6;
+            background-image: url('https://images.unsplash.com/photo-1542816417-0983675d45f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(248, 241, 229, 0.9);
         }
         
         header {
@@ -49,6 +55,8 @@
             border: 3px solid var(--accent);
             margin-bottom: 1rem;
             animation: pulse 2s infinite;
+            background-color: var(--light);
+            padding: 10px;
         }
         
         @keyframes pulse {
@@ -144,6 +152,10 @@
             padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
         
         .section-title {
@@ -185,6 +197,7 @@
             height: 200px;
             background-size: cover;
             background-position: center;
+            background-image: url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
         
         .service-content {
@@ -296,6 +309,7 @@
             color: var(--light);
             text-align: center;
             padding: 2rem;
+            margin-top: 2rem;
         }
         
         .footer-logo {
@@ -304,6 +318,8 @@
             border-radius: 50%;
             border: 2px solid var(--accent);
             margin-bottom: 1rem;
+            background-color: var(--light);
+            padding: 5px;
         }
         
         .social-links {
@@ -346,8 +362,10 @@
 </head>
 <body>
     <header>
-        <!-- Replace with your actual logo image -->
-        <img src="https://via.placeholder.com/150" alt="Umul Qura Academy Logo" class="logo">
+        <!-- Islamic-themed logo placeholder -->
+        <div class="logo">
+            <i class="fas fa-quran" style="font-size: 5rem; color: var(--primary);"></i>
+        </div>
         <h1>Umul Qura Academy</h1>
         <p class="tagline">Learn Quran Kareem with Tajweed, Nazra, Hifz, and Masnoon Dua'een in a nurturing Islamic environment</p>
         <a href="#contact" class="cta-button">Enroll Now</a>
@@ -372,7 +390,7 @@
         <h2 class="section-title">Our Services</h2>
         <div class="services">
             <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                 <div class="service-content">
                     <h3>Quran with Tajweed</h3>
                     <p>Learn to recite the Holy Quran with proper pronunciation and articulation according to Tajweed rules.</p>
@@ -380,7 +398,7 @@
             </div>
             
             <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                 <div class="service-content">
                     <h3>Nazra (Quran Reading)</h3>
                     <p>Master the skill of fluent Quran reading with correct pronunciation and rhythm.</p>
@@ -388,7 +406,7 @@
             </div>
             
             <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                 <div class="service-content">
                     <h3>Hifz (Memorization)</h3>
                     <p>Systematic Quran memorization program with proven techniques for long-term retention.</p>
@@ -396,7 +414,7 @@
             </div>
             
             <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                 <div class="service-content">
                     <h3>Masnoon Dua'een</h3>
                     <p>Learn authentic supplications from the Sunnah for daily life situations.</p>
@@ -414,8 +432,7 @@
                 <p>At Umul Qura Academy, we believe in creating an environment that fosters love for the Quran and Islamic values while developing strong recitation and memorization skills.</p>
             </div>
             <div class="about-image">
-                <!-- Replace with your actual about image -->
-                <img src="https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Quran Teaching">
+                <img src="https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Islamic Education">
             </div>
         </div>
     </section>
@@ -450,7 +467,9 @@
     </section>
     
     <footer>
-        <img src="https://via.placeholder.com/100" alt="Umul Qura Academy Logo" class="footer-logo">
+        <div class="footer-logo">
+            <i class="fas fa-quran" style="font-size: 3rem; color: var(--primary);"></i>
+        </div>
         <h3>Umul Qura Academy</h3>
         <p>Teaching Quran Kareem with Tajweed, Nazra, Hifz, and Masnoon Dua'een</p>
         
