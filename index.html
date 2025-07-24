@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qari Uzair's Quran Academy | Nazra & Hifz</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Umul Qura Academy - Learn Quran with Tajweed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary: #2c5e1a;
+            --primary: #1a5e1a;
             --secondary: #f8f1e5;
             --accent: #d4af37;
             --text: #333;
@@ -22,496 +22,489 @@
         }
         
         body {
-            background: var(--secondary);
+            background-color: var(--secondary);
             color: var(--text);
-            overflow-x: hidden;
+            line-height: 1.6;
         }
         
-        /* Header */
         header {
-            background: var(--primary);
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             color: var(--light);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .header-content {
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+            height: 100vh;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo i {
-            font-size: 2rem;
-            color: var(--accent);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            margin-bottom: 1rem;
             animation: pulse 2s infinite;
         }
         
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
         
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            color: var(--light);
-            text-align: center;
-        }
-        
-        .hero-content {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            animation: fadeIn 1.5s ease;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1.5s ease-in;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
+        .tagline {
             font-size: 1.2rem;
             margin-bottom: 2rem;
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-in 0.3s both;
         }
         
-        .btn {
+        .cta-button {
             display: inline-block;
-            background: var(--accent);
-            color: var(--text);
+            background-color: var(--accent);
+            color: var(--primary);
             padding: 0.8rem 2rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: bold;
             transition: all 0.3s ease;
-            border: 2px solid var(--accent);
+            animation: fadeIn 1.5s ease-in 0.6s both;
         }
         
-        .btn:hover {
-            background: transparent;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        nav {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            color: var(--light);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
             color: var(--accent);
-            transform: translateY(-5px);
         }
         
-        /* Qari Section */
-        .qari-section {
-            padding: 5rem 0;
-            background: var(--light);
+        .mobile-menu {
+            display: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
             color: var(--primary);
-            display: inline-block;
             position: relative;
         }
         
-        .section-title h2:after {
+        .section-title:after {
             content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            display: block;
             width: 80px;
             height: 3px;
-            background: var(--accent);
+            background-color: var(--accent);
+            margin: 0.5rem auto 0;
         }
         
-        .qari-content {
-            display: flex;
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .about {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+        
+        .about .section-title {
+            color: var(--light);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             align-items: center;
-            gap: 3rem;
-            animation: slideIn 1s ease;
         }
         
-        @keyframes slideIn {
+        .about-text {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
         }
         
-        .qari-image {
-            flex: 1;
-            position: relative;
-        }
-        
-        .qari-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s ease;
-        }
-        
-        .qari-image:hover img {
-            transform: scale(1.03);
-        }
-        
-        .qari-info {
-            flex: 1;
-        }
-        
-        .qari-info h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .qari-info h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-        }
-        
-        .qari-info p {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        /* Courses Section */
-        .courses {
-            padding: 5rem 0;
-            background: var(--secondary);
-        }
-        
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .course-card {
-            background: var(--light);
+        .about-image {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: slideInRight 1s ease-out;
         }
         
-        .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
         
-        .course-icon {
-            height: 120px;
-            display: flex;
-            justify-content: center;
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .contact {
+            background-color: var(--secondary);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .whatsapp-button {
+            display: inline-flex;
             align-items: center;
-            font-size: 3rem;
-            color: var(--accent);
-            background: rgba(212, 175, 55, 0.1);
+            background-color: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
         }
         
-        .course-content {
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .whatsapp-button i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: var(--light);
+            text-align: center;
             padding: 2rem;
         }
         
-        .course-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        /* Videos Section */
-        .videos {
-            padding: 5rem 0;
-            background: var(--light);
-        }
-        
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .video-card {
-            background: var(--secondary);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .video-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .video-thumbnail {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-        
-        .video-thumbnail iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .video-info {
-            padding: 1.5rem;
-        }
-        
-        .video-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            color: var(--light);
+        .footer-logo {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.8rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 999;
-            animation: pulse 2s infinite;
+            border: 2px solid var(--accent);
+            margin-bottom: 1rem;
         }
         
-        /* Responsive */
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
         @media (max-width: 768px) {
-            .qari-content {
-                flex-direction: column;
+            .nav-links {
+                display: none;
             }
             
-            .hero h2 {
+            .mobile-menu {
+                display: block;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
                 font-size: 2rem;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
+            .tagline {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-book-quran"></i>
-                    <h1>Qari Uzair's Academy</h1>
-                </div>
-            </div>
-        </div>
+        <!-- Replace with your actual logo image -->
+        <img src="https://via.placeholder.com/150" alt="Umul Qura Academy Logo" class="logo">
+        <h1>Umul Qura Academy</h1>
+        <p class="tagline">Learn Quran Kareem with Tajweed, Nazra, Hifz, and Masnoon Dua'een in a nurturing Islamic environment</p>
+        <a href="#contact" class="cta-button">Enroll Now</a>
     </header>
     
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Learn Quran with Qari Uzair</h2>
-            <p>Specializing in Nazra, Hifz, and Masnoon Duas with proper Tajweed</p>
-            <a href="#contact" class="btn">Start Learning Today</a>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Umul Qura Academy</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-    </section>
+    </nav>
     
-    <!-- Qari Section -->
-    <section class="qari-section" id="qari">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Qari</h2>
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-content">
+                    <h3>Quran with Tajweed</h3>
+                    <p>Learn to recite the Holy Quran with proper pronunciation and articulation according to Tajweed rules.</p>
+                </div>
             </div>
             
-            <div class="qari-content">
-                <div class="qari-image">
-                    <img src="https://images.unsplash.com/photo-1562788866-7b75c59b9d02?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Qari Uzair" onerror="this.src='https://via.placeholder.com/600x800/2c5e1a/ffffff?text=Qari+Uzair'">
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-content">
+                    <h3>Nazra (Quran Reading)</h3>
+                    <p>Master the skill of fluent Quran reading with correct pronunciation and rhythm.</p>
                 </div>
-                
-                <div class="qari-info">
-                    <h3>Qari Uzair Ahmed</h3>
-                    <h4>Certified Quran Teacher & Hafiz</h4>
-                    <p>With over 15 years of experience in teaching Quran, Qari Uzair specializes in Nazra (recitation), Hifz (memorization), and teaching Masnoon Duas with proper Tajweed rules.</p>
-                    <p>He holds Ijazah in Hafs 'an Asim recitation and has successfully taught hundreds of students both online and offline.</p>
-                    <a href="#contact" class="btn">Contact Qari Uzair</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Courses Section -->
-    <section class="courses" id="courses">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Courses</h2>
             </div>
             
-            <div class="courses-grid">
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <div class="course-content">
-                        <h3>Quran Nazra</h3>
-                        <p>Learn proper recitation of the Holy Quran with Tajweed rules.</p>
-                    </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-content">
+                    <h3>Hifz (Memorization)</h3>
+                    <p>Systematic Quran memorization program with proven techniques for long-term retention.</p>
                 </div>
-                
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="course-content">
-                        <h3>Quran Hifz</h3>
-                        <p>Memorization program with personalized plans and revision.</p>
-                    </div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-hands-praying"></i>
-                    </div>
-                    <div class="course-content">
-                        <h3>Masnoon Duas</h3>
-                        <p>Authentic Duas from Sunnah for daily life situations.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Videos Section -->
-    <section class="videos" id="videos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Student Recitations</h2>
             </div>
             
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/5kI2wNgqJ6A" title="Child Quran Recitation" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Child Reciting Surah Ar-Rahman</h3>
-                    </div>
-                </div>
-                
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/5kI2wNgqJ6A" title="Child Quran Recitation" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Surah Al-Fatiha with Tajweed</h3>
-                    </div>
-                </div>
-                
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/5kI2wNgqJ6A" title="Child Quran Recitation" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Daily Masnoon Duas</h3>
-                    </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-content">
+                    <h3>Masnoon Dua'een</h3>
+                    <p>Learn authentic supplications from the Sunnah for daily life situations.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Contact Section -->
-    <section class="qari-section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
+    <section id="about" class="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Umul Qura Academy is dedicated to providing high-quality Islamic education with a focus on Quranic studies. Our mission is to nurture a deep connection with the Holy Quran while maintaining the highest standards of Tajweed and recitation.</p>
+                <p>We offer a comprehensive curriculum that caters to students of all ages and levels, from beginners to advanced learners. Our approach combines traditional teaching methods with modern educational techniques to ensure effective learning.</p>
+                <p>At Umul Qura Academy, we believe in creating an environment that fosters love for the Quran and Islamic values while developing strong recitation and memorization skills.</p>
+            </div>
+            <div class="about-image">
+                <!-- Replace with your actual about image -->
+                <img src="https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Quran Teaching">
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>info@umulquraacademy.com</p>
             </div>
             
-            <div class="qari-content">
-                <div class="qari-info">
-                    <h3>Start Your Quran Journey Today</h3>
-                    <p>Contact Qari Uzair directly for enrollment or more information about our Quran courses.</p>
-                    
-                    <div style="margin: 2rem 0;">
-                        <p><i class="fas fa-phone-alt" style="color: var(--accent);"></i> +92 319 9929035</p>
-                        <p><i class="fab fa-whatsapp" style="color: var(--accent);"></i> WhatsApp: +92 319 9929035</p>
-                    </div>
-                    
-                    <a href="https://wa.me/923199929035" class="btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Message on WhatsApp
-                    </a>
-                </div>
-                
-                <div class="qari-image">
-                    <img src="https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Quran Learning" onerror="this.src='https://via.placeholder.com/600x800/2c5e1a/ffffff?text=Quran+Classes'">
-                </div>
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+92 331 9940383</p>
             </div>
+            
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>Online Academy - Learn from anywhere</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="https://wa.me/923319940383" class="whatsapp-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
         </div>
     </section>
     
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/923199929035" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <footer>
+        <img src="https://via.placeholder.com/100" alt="Umul Qura Academy Logo" class="footer-logo">
+        <h3>Umul Qura Academy</h3>
+        <p>Teaching Quran Kareem with Tajweed, Nazra, Hifz, and Masnoon Dua'een</p>
+        
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <p>&copy; 2023 Umul Qura Academy. All Rights Reserved.</p>
+    </footer>
     
     <script>
-        // Simple animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('section');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
+        // Simple mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
-            }, { threshold: 0.1 });
-            
-            sections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'all 0.6s ease';
-                observer.observe(section);
             });
         });
+        
+        // Animation on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.service-card, .about-text, .about-image, .contact-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+        
+        // Set initial state for animation
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.service-card, .about-text, .about-image, .contact-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transition = 'opacity 0.8s ease';
+            });
+            
+            animateOnScroll();
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
