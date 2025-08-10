@@ -3,60 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umul Qura Academy - Learn Quran with Tajweed</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Umul Qura Academy - Premium Online Quran Learning with Certified Teachers. Learn Tajweed, Hifz, Nazra and Islamic Studies from qualified instructors.">
+    <title>Umul Qura Academy - Premium Quran Learning with Tajweed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a5e1a;
+            --primary-dark: #0d3a0d;
             --secondary: #f8f1e5;
             --accent: #d4af37;
+            --accent-light: #e8c96a;
             --text: #333;
             --light: #fff;
+            --dark: #222;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--secondary);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
+            overflow-x: hidden;
             background-image: url('https://images.unsplash.com/photo-1542816417-0983675d45f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
-            background-color: rgba(248, 241, 229, 0.9);
+            background-color: rgba(248, 241, 229, 0.92);
         }
         
+        /* Arabic text styling */
+        .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.2em;
+            line-height: 2;
+            direction: rtl;
+        }
+        
+        /* Header with animated background */
         header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(135deg, rgba(26, 94, 26, 0.9) 0%, rgba(13, 58, 13, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: var(--light);
             text-align: center;
             padding: 2rem 1rem;
             position: relative;
             height: 100vh;
+            min-height: 700px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
         
+        /* Animated floating elements */
+        .floating-ayah {
+            position: absolute;
+            font-family: 'Amiri', serif;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 2rem;
+            animation: float 15s infinite linear;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.1; }
+            50% { opacity: 0.15; }
+            90% { opacity: 0.1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Logo with golden glow */
         .logo {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 3px solid var(--accent);
-            margin-bottom: 1rem;
-            animation: pulse 2s infinite;
+            border: 4px solid var(--accent);
+            margin-bottom: 1.5rem;
             background-color: var(--light);
-            padding: 10px;
+            padding: 15px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.7);
+        }
+        
+        .logo i {
+            font-size: 5.5rem;
+            color: var(--primary);
+            animation: pulse 3s infinite;
         }
         
         @keyframes pulse {
@@ -66,45 +123,93 @@
         }
         
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            animation: fadeIn 1.5s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1.2s ease-out;
+            position: relative;
+            z-index: 2;
         }
         
         .tagline {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
             max-width: 800px;
-            animation: fadeIn 1.5s ease-in 0.3s both;
+            animation: fadeIn 1.5s ease-in 0.4s both;
+            position: relative;
+            z-index: 2;
+            font-weight: 300;
         }
         
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--accent);
-            color: var(--primary);
-            padding: 0.8rem 2rem;
+            color: var(--primary-dark);
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            animation: fadeIn 1.5s ease-in 0.6s both;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out 0.8s both;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            color: var(--primary-dark);
         }
         
+        .cta-button:hover::before {
+            opacity: 1;
+        }
+        
+        .cta-button i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .cta-button:hover i {
+            transform: translateX(3px);
+        }
+        
+        /* Navigation with glass morphism effect */
         nav {
-            background-color: var(--primary);
+            background: rgba(26, 94, 26, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        nav.scrolled {
+            background: rgba(13, 58, 13, 0.95);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
         }
         
         .nav-container {
@@ -112,14 +217,21 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
         .nav-logo {
             color: var(--light);
-            font-weight: bold;
-            font-size: 1.5rem;
+            font-weight: 700;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-logo i {
+            margin-right: 0.5rem;
+            color: var(--accent);
         }
         
         .nav-links {
@@ -128,226 +240,1054 @@
         }
         
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 2.5rem;
+            position: relative;
         }
         
         .nav-links a {
             color: var(--light);
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-block;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
         }
         
         .nav-links a:hover {
             color: var(--accent);
         }
         
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
         .mobile-menu {
             display: none;
             color: var(--light);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            transition: var(--transition);
         }
         
+        .mobile-menu:hover {
+            color: var(--accent);
+        }
+        
+        /* Main sections with 3D tilt effect */
         section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
+            padding: 5rem 2rem;
+            max-width: 1400px;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+            transform-style: preserve-3d;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
             color: var(--primary);
             position: relative;
+            font-size: 2.5rem;
+            font-weight: 700;
         }
         
-        .section-title:after {
+        .section-title::after {
             content: '';
             display: block;
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent);
-            margin: 0.5rem auto 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin: 1rem auto 0;
+            border-radius: 2px;
         }
         
+        /* Services grid with flip cards */
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            perspective: 1000px;
         }
         
         .service-card {
             background-color: var(--light);
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            transform-style: preserve-3d;
+            height: 400px;
         }
         
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        .service-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+        }
+        
+        .service-card:hover .service-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .service-card-front, .service-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        
+        .service-card-front {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card-back {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--light);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
         }
         
         .service-img {
-            height: 200px;
+            height: 220px;
             background-size: cover;
             background-position: center;
-            background-image: url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
         }
         
         .service-content {
-            padding: 1.5rem;
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .service-content h3 {
             color: var(--primary);
             margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
         
-        .about {
+        .service-content p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .service-button {
+            align-self: flex-start;
             background-color: var(--primary);
             color: var(--light);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+        
+        .service-button:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .service-features li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+        
+        .service-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent);
+        }
+        
+        /* About section with timeline */
+        .about {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23d4af37" opacity="0.05"><path d="M30,10 Q50,5 70,10 T90,30 Q95,50 90,70 T70,90 Q50,95 30,90 T10,70 Q5,50 10,30 T30,10 Z"></path></svg>');
+            background-size: contain;
+            transform: translate(30%, -30%);
+        }
+        
+        .about::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23d4af37" opacity="0.05"><path d="M30,10 Q50,5 70,10 T90,30 Q95,50 90,70 T70,90 Q50,95 30,90 T10,70 Q5,50 10,30 T30,10 Z"></path></svg>');
+            background-size: contain;
+            transform: translate(-30%, 30%);
         }
         
         .about .section-title {
             color: var(--light);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about .section-title::after {
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
         }
         
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
         
         .about-text {
             animation: slideInLeft 1s ease-out;
         }
         
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
         
         .about-image {
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
             animation: slideInRight 1s ease-out;
-        }
-        
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
+            position: relative;
         }
         
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
+            transition: var(--transition);
         }
         
-        .contact {
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .stat-number i {
+            margin-right: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Teachers section */
+        .teachers {
             background-color: var(--secondary);
         }
         
-        .contact-info {
+        .teacher-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .teacher-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .teacher-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .teacher-social {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .teacher-card:hover .teacher-social {
+            opacity: 1;
+        }
+        
+        .teacher-social a {
+            color: var(--light);
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .teacher-social a:hover {
+            color: var(--accent);
+        }
+        
+        .teacher-info {
+            padding: 1.5rem;
+        }
+        
+        .teacher-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .teacher-title {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .teacher-bio {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Testimonials section */
+        .testimonials {
+            background: linear-gradient(135deg, var(--secondary), var(--light));
+        }
+        
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-slide {
+            background-color: var(--light);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin: 0 1rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .testimonial-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-quote::before, .testimonial-quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .testimonial-quote::before {
+            top: -15px;
+            left: -10px;
+        }
+        
+        .testimonial-quote::after {
+            bottom: -25px;
+            right: -10px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-role {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .slider-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        /* Pricing section */
+        .pricing {
+            background-color: var(--light);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .pricing-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 2px solid #eee;
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--accent);
+            transform: scale(1.03);
+        }
+        
+        .pricing-card.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            padding: 0.3rem 2rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transform: rotate(45deg);
+            transform-origin: center;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pricing-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--light);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-duration {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-features {
+            padding: 2rem;
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+        
+        .pricing-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary);
+        }
+        
+        .pricing-features li.disabled::before {
+            content: '\f00d';
+            color: #ccc;
+        }
+        
+        .pricing-button {
+            display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+        
+        .pricing-button:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        /* Contact section with form */
+        .contact {
+            background-color: var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%231a5e1a" opacity="0.03"><path d="M30,10 Q50,5 70,10 T90,30 Q95,50 90,70 T70,90 Q50,95 30,90 T10,70 Q5,50 10,30 T30,10 Z"></path></svg>');
+            background-size: contain;
+            transform: translate(30%, -30%);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
-            margin-bottom: 3rem;
         }
         
         .contact-card {
             background-color: var(--light);
             padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
         }
         
         .contact-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .contact-card i {
-            font-size: 2rem;
+        .contact-icon {
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-right: 1.5rem;
+            min-width: 40px;
+            text-align: center;
         }
         
+        .contact-details h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form {
+            background-color: var(--light);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 94, 26, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--light);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .submit-button i {
+            margin-left: 0.5rem;
+        }
+        
+        /* WhatsApp button with pulse animation */
         .whatsapp-button {
             display: inline-flex;
             align-items: center;
             background-color: #25D366;
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
         }
         
         .whatsapp-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-button:hover::before {
+            opacity: 1;
         }
         
         .whatsapp-button i {
-            margin-right: 0.5rem;
-            font-size: 1.2rem;
+            margin-right: 0.8rem;
+            font-size: 1.3rem;
         }
         
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Footer with wave shape */
         footer {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             color: var(--light);
             text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
+            padding-top: 5rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f8f1e5" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f8f1e5" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f8f1e5"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: translateY(-99%);
         }
         
         .footer-logo {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 2px solid var(--accent);
-            margin-bottom: 1rem;
+            border: 3px solid var(--accent);
+            margin: 0 auto 1.5rem;
             background-color: var(--light);
-            padding: 5px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .footer-logo i {
+            font-size: 4rem;
+            color: var(--primary);
+        }
+        
+        .footer-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .footer-tagline {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
         
         .social-links {
-            margin: 1rem 0;
+            margin: 2rem 0;
         }
         
         .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
             color: var(--light);
+            border-radius: 50%;
             margin: 0 0.5rem;
-            font-size: 1.5rem;
-            transition: color 0.3s;
+            font-size: 1.2rem;
+            transition: var(--transition);
         }
         
         .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            margin: 0 1rem 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
             color: var(--accent);
+        }
+        
+        .copyright {
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from { 
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .about-content, .contact-container {
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .contact-form {
+                margin-top: 2rem;
+            }
+            
+            .service-card {
+                height: auto;
+            }
+            
+            .service-card-inner {
+                transform: none !important;
+            }
+            
+            .service-card-front, .service-card-back {
+                position: relative;
+                backface-visibility: visible;
+                transform: none;
+            }
+            
+            .service-card-back {
+                padding-top: 0;
+            }
         }
         
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0 2rem;
+                clip-path: circle(0px at 90% -10%);
+                transition: all 0.8s ease-out;
+                pointer-events: none;
+            }
+            
+            .nav-links.active {
+                clip-path: circle(1000px at 90% -10%);
+                pointer-events: all;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
             }
             
             .mobile-menu {
                 display: block;
             }
             
-            .about-content {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats {
                 grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.popular::before {
+                top: 10px;
+                right: -25px;
+                font-size: 0.7rem;
+                padding: 0.2rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            header {
+                padding: 2rem 1rem;
+                min-height: 600px;
             }
             
             h1 {
@@ -357,26 +1297,79 @@
             .tagline {
                 font-size: 1rem;
             }
+            
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .logo i {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .whatsapp-button i {
+                font-size: 1.1rem;
+                margin-right: 0.5rem;
+            }
+            
+            .footer-logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .footer-logo i {
+                font-size: 3rem;
+            }
+            
+            .footer-title {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <!-- Islamic-themed logo placeholder -->
+    <!-- Floating Ayahs -->
+    <div class="floating-ayah" style="top: 10%; left: 5%; animation-delay: 0s;">﷽</div>
+    <div class="floating-ayah" style="top: 20%; left: 80%; animation-delay: 2s;">﴿وَٱتْلُ مَآ أُوحِىَ إِلَيْكَ مِنَ ٱلْكِتَٰبِ﴾</div>
+    <div class="floating-ayah" style="top: 70%; left: 15%; animation-delay: 4s;">﴿وَرَتِّلِ ٱلْقُرْءَانَ تَرْتِيلًا﴾</div>
+    <div class="floating-ayah" style="top: 40%; left: 70%; animation-delay: 6s;">﴿إِنَّا نَحْنُ نَزَّلْنَا ٱلذِّكْرَ وَإِنَّا لَهُۥ لَحَٰفِظُونَ﴾</div>
+    <div class="floating-ayah" style="top: 80%; left: 60%; animation-delay: 8s;">﴿ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ﴾</div>
+    
+    <header id="home">
         <div class="logo">
-            <i class="fas fa-quran" style="font-size: 5rem; color: var(--primary);"></i>
+            <i class="fas fa-quran"></i>
         </div>
         <h1>Umul Qura Academy</h1>
-        <p class="tagline">Learn Quran Kareem with Tajweed, Nazra, Hifz, and Masnoon Dua'een in a nurturing Islamic environment</p>
-        <a href="#contact" class="cta-button">Enroll Now</a>
+        <p class="tagline">Master the Quran with Perfect Tajweed from Certified Teachers. Online Classes for All Ages Worldwide.</p>
+        <a href="#contact" class="cta-button">Start Learning Today <i class="fas fa-arrow-right"></i></a>
     </header>
     
     <nav>
         <div class="nav-container">
-            <div class="nav-logo">Umul Qura Academy</div>
+            <div class="nav-logo"><i class="fas fa-mosque"></i> Umul Qura Academy</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#services">Programs</a></li>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -387,111 +1380,436 @@
     </nav>
     
     <section id="services">
-        <h2 class="section-title">Our Services</h2>
+        <h2 class="section-title">Our Quran Programs</h2>
         <div class="services">
             <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="service-content">
-                    <h3>Quran with Tajweed</h3>
-                    <p>Learn to recite the Holy Quran with proper pronunciation and articulation according to Tajweed rules.</p>
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="service-content">
+                            <h3>Quran with Tajweed</h3>
+                            <p>Master the proper pronunciation and articulation of the Holy Quran according to authentic Tajweed rules with our certified instructors.</p>
+                            <a href="#" class="service-button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Course Details</h3>
+                        <ul class="service-features">
+                            <li>Personalized 1-on-1 sessions</li>
+                            <li>Certified Tajweed teachers</li>
+                            <li>Interactive learning materials</li>
+                            <li>Progress tracking</li>
+                            <li>Flexible scheduling</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Enroll Now</a>
+                    </div>
                 </div>
             </div>
             
             <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="service-content">
-                    <h3>Nazra (Quran Reading)</h3>
-                    <p>Master the skill of fluent Quran reading with correct pronunciation and rhythm.</p>
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="service-content">
+                            <h3>Hifz Program</h3>
+                            <p>Systematic Quran memorization program with proven techniques for long-term retention and revision strategies.</p>
+                            <a href="#" class="service-button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Course Details</h3>
+                        <ul class="service-features">
+                            <li>Customized memorization plan</li>
+                            <li>Daily revision system</li>
+                            <li>Memorization techniques</li>
+                            <li>Periodic testing</li>
+                            <li>Hifz completion certificate</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Enroll Now</a>
+                    </div>
                 </div>
             </div>
             
             <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="service-content">
-                    <h3>Hifz (Memorization)</h3>
-                    <p>Systematic Quran memorization program with proven techniques for long-term retention.</p>
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="service-content">
+                            <h3>Nazra (Quran Reading)</h3>
+                            <p>Develop fluent Quran reading skills with correct pronunciation and rhythm, starting from basic Arabic letters.</p>
+                            <a href="#" class="service-button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Course Details</h3>
+                        <ul class="service-features">
+                            <li>Arabic alphabet mastery</li>
+                            <li>Proper pronunciation</li>
+                            <li>Reading fluency development</li>
+                            <li>Basic Tajweed rules</li>
+                            <li>Gradual progression</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Enroll Now</a>
+                    </div>
                 </div>
             </div>
             
             <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="service-content">
-                    <h3>Masnoon Dua'een</h3>
-                    <p>Learn authentic supplications from the Sunnah for daily life situations.</p>
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="service-content">
+                            <h3>Islamic Studies</h3>
+                            <p>Comprehensive Islamic education including Aqeedah, Fiqh, Seerah, and memorization of Masnoon Dua'een.</p>
+                            <a href="#" class="service-button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Course Details</h3>
+                        <ul class="service-features">
+                            <li>Daily supplications</li>
+                            <li>Islamic beliefs</li>
+                            <li>Prophet's biography</li>
+                            <li>Islamic jurisprudence</li>
+                            <li>Moral teachings</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Enroll Now</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
     <section id="about" class="about">
-        <h2 class="section-title">About Us</h2>
+        <h2 class="section-title">About Our Academy</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Umul Qura Academy is dedicated to providing high-quality Islamic education with a focus on Quranic studies. Our mission is to nurture a deep connection with the Holy Quran while maintaining the highest standards of Tajweed and recitation.</p>
-                <p>We offer a comprehensive curriculum that caters to students of all ages and levels, from beginners to advanced learners. Our approach combines traditional teaching methods with modern educational techniques to ensure effective learning.</p>
-                <p>At Umul Qura Academy, we believe in creating an environment that fosters love for the Quran and Islamic values while developing strong recitation and memorization skills.</p>
+                <p>Umul Qura Academy is a premier online Quran learning institution dedicated to providing authentic Islamic education with a focus on Quranic studies. Our mission is to nurture a deep connection with the Holy Quran while maintaining the highest standards of Tajweed and recitation.</p>
+                <p>Founded by a team of Al-Azhar graduates and certified Qaris, we combine traditional teaching methodologies with modern educational technology to create an immersive learning experience. Our curriculum is designed to cater to students of all ages and levels, from absolute beginners to advanced learners.</p>
+                <p>We take pride in our personalized approach, where each student receives individual attention and a customized learning plan to ensure steady progress and mastery of the Quran.</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number"><i class="fas fa-user-graduate"></i> 500+</div>
+                        <div class="stat-label">Students Enrolled</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number"><i class="fas fa-chalkboard-teacher"></i> 20+</div>
+                        <div class="stat-label">Certified Teachers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number"><i class="fas fa-globe"></i> 15+</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number"><i class="fas fa-award"></i> 100%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Islamic Education">
+                <img src="https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Islamic Education" loading="lazy">
+            </div>
+        </div>
+    </section>
+    
+    <section id="teachers" class="teachers">
+        <h2 class="section-title">Meet Our Teachers</h2>
+        <div class="teacher-grid">
+            <div class="teacher-card">
+                <div class="teacher-img" style="background-image: url('https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="teacher-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="teacher-info">
+                    <h3>Sheikh Abdullah</h3>
+                    <div class="teacher-title">Senior Quran Instructor</div>
+                    <p class="teacher-bio">Graduate of Al-Azhar University with 15 years of teaching experience in Tajweed and Hifz. Ijazah in Hafs 'an Asim recitation.</p>
+                    <a href="#contact" class="service-button">Book Trial</a>
+                </div>
+            </div>
+            
+            <div class="teacher-card">
+                <div class="teacher-img" style="background-image: url('https://images.unsplash.com/photo-1564564244660-5d73c057f2d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="teacher-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="teacher-info">
+                    <h3>Ustadha Aisha</h3>
+                    <div class="teacher-title">Female Quran Teacher</div>
+                    <p class="teacher-bio">Specialized in teaching women and children with 10 years of experience. Ijazah in Warsh 'an Nafi' recitation.</p>
+                    <a href="#contact" class="service-button">Book Trial</a>
+                </div>
+            </div>
+            
+            <div class="teacher-card">
+                <div class="teacher-img" style="background-image: url('https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="teacher-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="teacher-info">
+                    <h3>Sheikh Ibrahim</h3>
+                    <div class="teacher-title">Hifz Specialist</div>
+                    <p class="teacher-bio">Memorized the Quran at age 14. Expert in memorization techniques with 8 years of teaching Hifz.</p>
+                    <a href="#contact" class="service-button">Book Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">What Our Students Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-slide active">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" class="testimonial-avatar">
+                <p class="testimonial-quote">"I've tried several online Quran academies, but Umul Qura stands out for their attention to Tajweed details and patient teachers. My recitation has improved dramatically in just 3 months!"</p>
+                <div class="testimonial-author">Amina Khan</div>
+                <div class="testimonial-role">Adult Student, Canada</div>
+            </div>
+            
+            <div class="testimonial-slide">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="testimonial-avatar">
+                <p class="testimonial-quote">"My son has been learning with Sheikh Abdullah for a year now and has memorized 5 juz already. The teacher's dedication is remarkable and the progress tracking system keeps us informed."</p>
+                <div class="testimonial-author">Mohammed Ali</div>
+                <div class="testimonial-role">Parent, UK</div>
+            </div>
+            
+            <div class="testimonial-slide">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student" class="testimonial-avatar">
+                <p class="testimonial-quote">"As a revert, I was nervous about learning Quran, but Ustadha Aisha made me feel so comfortable. She explains everything clearly and the flexible schedule fits my busy life perfectly."</p>
+                <div class="testimonial-author">Sarah Johnson</div>
+                <div class="testimonial-role">New Muslim, USA</div>
+            </div>
+            
+            <div class="slider-controls">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pricing" class="pricing">
+        <h2 class="section-title">Affordable Pricing</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="pricing-name">Basic Plan</div>
+                    <div class="pricing-price">$29<span>/mo</span></div>
+                    <div class="pricing-duration">3 classes per week</div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>30-minute sessions</li>
+                        <li>Quran reading or Tajweed</li>
+                        <li>Basic Islamic studies</li>
+                        <li>Weekly progress report</li>
+                        <li class="disabled">Memorization program</li>
+                        <li class="disabled">Certificate upon completion</li>
+                    </ul>
+                    <a href="#contact" class="pricing-button">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="pricing-card popular">
+                <div class="pricing-header">
+                    <div class="pricing-name">Standard Plan</div>
+                    <div class="pricing-price">$49<span>/mo</span></div>
+                    <div class="pricing-duration">5 classes per week</div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>45-minute sessions</li>
+                        <li>Comprehensive Tajweed</li>
+                        <li>Islamic studies included</li>
+                        <li>Bi-weekly progress report</li>
+                        <li>Basic memorization</li>
+                        <li class="disabled">Advanced Hifz program</li>
+                    </ul>
+                    <a href="#contact" class="pricing-button">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="pricing-name">Premium Plan</div>
+                    <div class="pricing-price">$79<span>/mo</span></div>
+                    <div class="pricing-duration">Daily classes</div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>60-minute sessions</li>
+                        <li>Advanced Tajweed</li>
+                        <li>Full Islamic curriculum</li>
+                        <li>Weekly progress report</li>
+                        <li>Hifz program</li>
+                        <li>Certificate upon completion</li>
+                    </ul>
+                    <a href="#contact" class="pricing-button">Get Started</a>
+                </div>
             </div>
         </div>
     </section>
     
     <section id="contact" class="contact">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="contact-info">
-            <div class="contact-card">
-                <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <p>info@umulquraacademy.com</p>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Us</h3>
+                        <p>info@umulquraacademy.com</p>
+                        <p>support@umulquraacademy.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Call Us</h3>
+                        <p>+92 331 9940383</p>
+                        <p>+1 (123) 456-7890</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>Online Academy - Learn from anywhere in the world</p>
+                        <p>Main Office: Islamabad, Pakistan</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Working Hours</h3>
+                        <p>Monday - Friday: 8am - 10pm</p>
+                        <p>Saturday - Sunday: 9am - 8pm</p>
+                    </div>
+                </div>
             </div>
             
-            <div class="contact-card">
-                <i class="fas fa-phone"></i>
-                <h3>Phone</h3>
-                <p>+92 331 9940383</p>
+            <div class="contact-form">
+                <form id="enrollmentForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course">Course Interest</label>
+                        <select id="course" class="form-control" required>
+                            <option value="">Select a course</option>
+                            <option value="tajweed">Quran with Tajweed</option>
+                            <option value="hifz">Hifz Program</option>
+                            <option value="nazra">Nazra (Quran Reading)</option>
+                            <option value="islamic-studies">Islamic Studies</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" class="form-control"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
             </div>
-            
-            <div class="contact-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Location</h3>
-                <p>Online Academy - Learn from anywhere</p>
-            </div>
-        </div>
-        
-        <div style="text-align: center;">
-            <a href="https://wa.me/923319940383" class="whatsapp-button" target="_blank">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
         </div>
     </section>
     
+    <div class="whatsapp-float">
+        <a href="https://wa.me/923319940383" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i> Chat Now
+        </a>
+    </div>
+    
     <footer>
         <div class="footer-logo">
-            <i class="fas fa-quran" style="font-size: 3rem; color: var(--primary);"></i>
+            <i class="fas fa-quran"></i>
         </div>
-        <h3>Umul Qura Academy</h3>
-        <p>Teaching Quran Kareem with Tajweed, Nazra, Hifz, and Masnoon Dua'een</p>
+        <h3 class="footer-title">Umul Qura Academy</h3>
+        <p class="footer-tagline">Teaching the Holy Quran with perfect Tajweed to students worldwide through personalized online classes.</p>
         
         <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
         
-        <p>&copy; 2023 Umul Qura Academy. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#services">Programs</a>
+            <a href="#teachers">Teachers</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Umul Qura Academy. All Rights Reserved.</p>
+        </div>
     </footer>
     
     <script>
-        // Simple mobile menu toggle
+        // Mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
         });
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-menu i').classList.remove('fa-times');
                 
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -499,26 +1817,83 @@
             });
         });
         
-        // Animation on scroll
+        // Testimonial slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                showSlide(parseInt(this.getAttribute('data-slide')));
+            });
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+        
+        // Form submission
+        document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const course = document.getElementById('course').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send this data to your server
+            // For demo, we'll just show an alert
+            alert(`Thank you, ${name}! We've received your enrollment request for ${course}. We'll contact you shortly at ${email} or ${phone}.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Animate elements on scroll
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.service-card, .about-text, .about-image, .contact-card');
+            const elements = document.querySelectorAll('.service-card, .about-text, .about-image, .contact-card, .teacher-card, .pricing-card');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
+                const screenPosition = window.innerHeight / 1.2;
                 
                 if(elementPosition < screenPosition) {
                     element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
                 }
             });
         };
         
         // Set initial state for animation
         window.addEventListener('load', function() {
-            document.querySelectorAll('.service-card, .about-text, .about-image, .contact-card').forEach(el => {
+            document.querySelectorAll('.service-card, .about-text, .about-image, .contact-card, .teacher-card, .pricing-card').forEach(el => {
                 el.style.opacity = '0';
-                el.style.transition = 'opacity 0.8s ease';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.8s ease';
             });
+            
+            // Create floating ayahs
+            for (let i = 0; i < 8; i++) {
+                const ayah = document.createElement('div');
+                ayah.className = 'floating-ayah';
+                ayah.style.top = Math.random() * 100 + '%';
+                ayah.style.left = Math.random() * 100 + '%';
+                ayah.style.animationDelay = Math.random() * 10 + 's';
+                ayah.textContent = '﷽';
+                document.querySelector('header').appendChild(ayah);
+            }
             
             animateOnScroll();
         });
